@@ -14,16 +14,17 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-// import {Directive} from '@angular/core';
+import {Directive} from '@angular/core';
 
-// import {StickyElementDirective} from './sticky_element_directive';
+import {StickyElementDirective} from '../../../../src/app/sticky.element.directive';
 
-// @Directive({selector: '[sticky-td-left]'})
-// export class StickyTdLeftDirective extends StickyElementDirective {
-//   handleHorizontalScrollEvent(event: UIEvent): void {
-//     const leftOffset = (event.target as HTMLElement).scrollLeft;
-//     this.elements.forEach((el: HTMLElement) => {
-//       el.style.left = leftOffset + 'px';
-//     });
-//   }
-// }
+@Directive({selector: '[sticky-td-left]'})
+export class StickyTdLeftDirective extends StickyElementDirective {
+  handleHorizontalScrollEvent(event: UIEvent): void {
+    console.log("got horizontal scroll event");
+    const leftOffset = (event.target as HTMLElement).scrollLeft;
+    this.elements.forEach((el: HTMLElement) => {
+      el.style.left = leftOffset + 'px';
+    });
+  }
+}
