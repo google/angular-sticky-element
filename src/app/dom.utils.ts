@@ -24,8 +24,8 @@ limitations under the License.
  * @returns the total offset of the element.
  */
 export function getOffset(el: HTMLElement): {top: number, left: number} {
-  let _x = 0;
-  let _y = 0;
+  let _x:number = 0;
+  let _y:number = 0;
   while (el && !isNaN(el.offsetLeft) && !isNaN(el.offsetTop)) {
     _x += el.offsetLeft - el.scrollLeft;
     _y += el.offsetTop - el.scrollTop;
